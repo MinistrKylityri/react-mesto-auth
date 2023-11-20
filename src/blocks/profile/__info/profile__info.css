@@ -1,0 +1,22 @@
+.profile__info {
+    display: grid;
+    grid-template-columns: 294px 1fr;
+    grid-template-rows: 39px 18px;
+    column-gap: 18px;
+    row-gap: 16px;
+    max-width: 336px;
+    align-items: center;
+    margin-top: 28px;
+}
+
+@media (max-width: 767px) {
+    .profile__info {
+        grid-template-columns: 189px 1fr;
+        grid-template-rows: 26px 14px;
+        column-gap: 10px;
+        row-gap: 14px;
+        max-width: 100%;
+        margin-top: 0;
+
+    }
+}

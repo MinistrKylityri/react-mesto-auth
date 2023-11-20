@@ -1,0 +1,18 @@
+.popup__title-img {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+
+@media (max-width: 767px) {
+    .popup__title-img {
+        font-size: 18px;
+        line-height: 22px;
+        margin: 25px 22px 75px 22px;
+
+    }
+}

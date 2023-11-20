@@ -1,0 +1,19 @@
+.element__button {
+    background-color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    background-image: url(../../../images/Group.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    box-sizing: border-box;
+    width: 22px;
+    height: 19px;
+
+}
+
+
+.element__button:hover {
+    opacity: 0.5;
+
+}

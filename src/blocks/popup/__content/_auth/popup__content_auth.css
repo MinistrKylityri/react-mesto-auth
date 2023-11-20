@@ -1,0 +1,8 @@
+.popup__content_auth {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 330px;
+    gap: 32px;
+
+}
