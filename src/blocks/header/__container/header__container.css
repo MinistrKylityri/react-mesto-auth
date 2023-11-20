@@ -3,4 +3,6 @@
     align-items: center;
     justify-content: end;
     gap: 24px;
+    padding-bottom: 46px;
+    margin: 0;
 }
