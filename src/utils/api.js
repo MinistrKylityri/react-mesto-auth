@@ -7,7 +7,7 @@ class Api {
 
 
     _checkResponse(res) {
-        return res.ok ? res.json() : Promise.reject
+        return res.ok ? res.json() : Promise.reject()
     }
 
     getInfo() {
@@ -68,28 +68,6 @@ class Api {
             })
             .then(this._checkResponse);
     }
-
-    // addLike(cardId) {
-    //     return fetch(`${this._url}/cards/${cardId}/likes `,
-    //         {
-    //             method: 'PUT',
-    //             headers: {
-    //                 authorization: this._authorization
-    //             }
-    //         })
-    //         .then(this._checkResponse);
-    // }
-
-    // deleteLike(cardId) {
-    //     return fetch(`${this._url}/cards/${cardId}/likes `,
-    //         {
-    //             method: 'DELETE',
-    //             headers: {
-    //                 authorization: this._authorization
-    //             }
-    //         })
-    //         .then(this._checkResponse);
-    // }
 
     deleteCard(cardId) {
         return fetch(`${this._url}/cards/${cardId}`,

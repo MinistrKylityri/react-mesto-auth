@@ -1,5 +1,3 @@
-
-
 const optionsApiAuth = {
     baseUrl: `https://auth.nomoreparties.co`,
     headers: {
@@ -18,8 +16,8 @@ class apiAuth {
         return res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
     }
 
-    signup({ email, password }) {
-        return this._apiAuthRequest(`${this.baseUrl}/signup`, {
+    signUp({ email, password }) {
+        return this._sendRequest(`${this.baseUrl}/signup`, {
             method: 'POST',
             headers: this.headers,
             body: JSON.stringify({
@@ -29,8 +27,8 @@ class apiAuth {
         });
     }
 
-    signin({ email, password }) {
-        return this._apiAuthRequest(`${this.baseUrl}/signin`, {
+    signIn({ email, password }) {
+        return this._sendRequest(`${this.baseUrl}/signin`, {
             method: 'POST',
             headers: this.headers,
             body: JSON.stringify({
@@ -40,13 +38,13 @@ class apiAuth {
         });
     }
 
-    async _apiAuthRequest(url, options) {
+    async _sendRequest(url, options) {
         const res = await fetch(url, options);
         return this.checkResponse(res);
     }
 
     checkToken(token) {
-        return this._apiAuthRequest(`${this.baseUrl}/users/me`, {
+        return this._sendRequest(`${this.baseUrl}/users/me`, {
             headers: { ...this.headers, Authorization: `Bearer ${token}` },
         });
     }

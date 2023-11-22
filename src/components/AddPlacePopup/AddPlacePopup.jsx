@@ -1,14 +1,27 @@
+import { useEffect } from "react";
 import useFormValidation from "../../utils/useFormValidation";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 export default function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
-  const { values, errors, isValid, isInputValid, handleChange, reset } =
-    useFormValidation();
+  const {
+    values,
+    errors,
+    isValid,
+    isInputValid,
+    handleChange,
+    reset,
+    setValue,
+  } = useFormValidation();
 
   function resetForClose() {
     onClose();
     reset();
   }
+
+  useEffect(() => {
+    setValue("title", "");
+    setValue("link", "");
+  }, [isOpen, setValue]);
 
   function handleSubmit(e) {
     e.preventDefault();

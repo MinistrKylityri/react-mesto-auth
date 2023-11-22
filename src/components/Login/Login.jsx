@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 
 export default function Login({ isLoggedIn, onLogin }) {
   const [email, setEmail] = useState("");
@@ -18,13 +17,6 @@ export default function Login({ isLoggedIn, onLogin }) {
     onLogin(email, password);
   }
 
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/");
-    }
-  }, [isLoggedIn, navigate]);
   return (
     <form onSubmit={handleSubmit} className="auth__form" noValidate>
       <h2 className="auth__title">Вход</h2>
