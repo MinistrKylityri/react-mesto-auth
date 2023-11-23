@@ -19,8 +19,8 @@ export default function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
   }
 
   useEffect(() => {
-    setValue("title", "");
-    setValue("link", "");
+    setValue("title", reset);
+    setValue("link", reset);
   }, [isOpen, setValue]);
 
   function handleSubmit(e) {

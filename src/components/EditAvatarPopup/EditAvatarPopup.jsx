@@ -15,7 +15,7 @@ export default function EditAvataPopup({ isOpen, onClose, onUpdateAvatar }) {
   } = useFormValidation();
 
   useEffect(() => {
-    setValue("avatar", "");
+    setValue("avatar", reset);
   }, [isOpen, setValue]);
 
   function resetForClose() {
