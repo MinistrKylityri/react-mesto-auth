@@ -192,9 +192,7 @@ function App() {
       .then((res) => {
         console.log(res);
 
-        setCards((cards) =>
-          cards.filter((cards) => cards._id !== deleteCardId)
-        );
+        setCards((cards) => cards.filter((card) => card._id !== deleteCardId));
         closeAllPopup();
       })
       .catch((err) => console.error(`Ошибка удаления карточки ${err}`));

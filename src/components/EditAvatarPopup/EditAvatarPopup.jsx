@@ -4,19 +4,12 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 export default function EditAvataPopup({ isOpen, onClose, onUpdateAvatar }) {
   const input = useRef(0);
-  const {
-    values,
-    errors,
-    isValid,
-    isInputValid,
-    handleChange,
-    reset,
-    setValue,
-  } = useFormValidation();
+  const { values, errors, isValid, isInputValid, handleChange, reset } =
+    useFormValidation();
 
   useEffect(() => {
-    setValue("avatar", reset);
-  }, [isOpen, setValue]);
+    reset();
+  }, [isOpen]);
 
   function resetForClose() {
     onClose();

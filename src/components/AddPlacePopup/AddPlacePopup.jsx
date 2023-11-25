@@ -3,15 +3,8 @@ import useFormValidation from "../../utils/useFormValidation";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 export default function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
-  const {
-    values,
-    errors,
-    isValid,
-    isInputValid,
-    handleChange,
-    reset,
-    setValue,
-  } = useFormValidation();
+  const { values, errors, isValid, isInputValid, handleChange, reset } =
+    useFormValidation();
 
   function resetForClose() {
     onClose();
@@ -19,9 +12,8 @@ export default function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
   }
 
   useEffect(() => {
-    setValue("title", reset);
-    setValue("link", reset);
-  }, [isOpen, setValue]);
+    reset();
+  }, [isOpen]);
 
   function handleSubmit(e) {
     e.preventDefault();
